@@ -22,7 +22,7 @@ const [data2,setData2]=useState([])
         })
 
         const getData2=async()=>{
-            return await fetch("https://newsapi.org/v2/top-headlines?country=in&pageSize=10&apiKey=5e1a87d037a84f089b608d972b8ffe04").then((res)=>
+            return await fetch("https://newsapi.org/v2/top-headlines?country=us&pageSize=10&apiKey=5e1a87d037a84f089b608d972b8ffe04").then((res)=>
             res.json()).then((res)=>{
                 return res.articles
             })

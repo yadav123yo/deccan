@@ -127,6 +127,26 @@ width: 80%;
   border-top:1px solid;
   height: 300px;
 }
+.science{
+  padding:20px 10px;
+  width: 95%;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;}
+
+.single{
+  width:95%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 20px 10px;
+  height: 420px;
+  margin-left: 10px;
+}
+.science1{
+  display: flex;
+  gap: 10px;
+  overflow-x: scroll;
+  
+
+}
+
 .card{
   color: #000;
   text-decoration: none;

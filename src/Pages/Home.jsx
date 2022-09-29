@@ -11,6 +11,7 @@ function Home (){
     const [data,setData]=useState([])
     const [data1,setData1]=useState([])
     const [data2,setData2]=useState([])
+    const [data3,setData3]=useState([])
     useEffect(()=>{
         
         
@@ -47,7 +48,18 @@ function Home (){
             setData2(res)
         })
         
-    },[name,setData,setData1,setData2])
+        const getData3=async()=>{
+            return await fetch("https://newsapi.org/v2/everything?q=science&language=hi&page=3&pageSize=5&apiKey=5e1a87d037a84f089b608d972b8ffe04").then((res)=>
+            res.json()).then((res)=>{
+                return res.articles
+            })
+        }
+        getData3().then((res)=>{
+            // console.log(res)
+            setData3(res)
+        })
+        
+    },[name,setData,setData1,setData2,setData3])
   
 console.log(data)
 
@@ -56,7 +68,7 @@ console.log(data)
 
     return (
         <div className="container">
-            <div><h1>TOP STORY</h1>
+            <div><h1>Head-lines</h1>
             
             <div className="con_data">
                 <div className="main_1">
@@ -107,7 +119,37 @@ console.log(data)
                     </Link>)
                                         }
                 </div>
-            </div>
+                </div>
+
+
+
+               < div className="science">
+                <div>
+                <h2>Science in Hindi</h2>
+                </div>
+                <div className="science1">
+                {data3?.map((item)=><Link to ={`/${name}/${item.title}`}>
+                <div className="single">
+                <img style={{width: "80%",height:"50%",marginBottom:"1rem",borderRadius:"1rem",alignItems:"center",marginLeft:"20px"}} src={item.urlToImage} class="card-img" alt="..."/>
+                <div className="card-body">
+                                                    <h5 className="card-title">{item.title}</h5>
+                                                    <p className="card-text">{item.description.slice(0,90)}</p>
+                                                </div>
+                                                </div>
+
+
+                </Link>)}
+               
+                </div>
+</div>
+
+
+
+
+
+
+
+
             <div className="below">
                 <h5>CARTOON OF THE DAY</h5>
                 <img style={{height:"80%"}} src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/978fd83bb6c01cd9a4e65fe74c6445c6f53d8956-tc-img-web.jpg" alt="..."/>
