@@ -130,22 +130,37 @@ width: 80%;
 .science{
   padding:20px 10px;
   width: 95%;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;}
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
+}
 
 .single{
-  width:95%;
+  width:250px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding: 20px 10px;
-  height: 420px;
+  height: 400px;
   margin-left: 10px;
 }
+
 .science1{
   display: flex;
   gap: 10px;
   overflow-x: scroll;
   
-
 }
+
+h5,p{
+  color: black;
+  
+}
+p{
+  font-size: small; 
+  margin-top: 10px;
+}
+h5{
+  font-size: medium;
+}
+
 
 .card{
   color: #000;

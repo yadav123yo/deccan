@@ -12,6 +12,8 @@ function Home (){
     const [data1,setData1]=useState([])
     const [data2,setData2]=useState([])
     const [data3,setData3]=useState([])
+    const [data4,setData4]=useState([])
+    const [data5,setData5]=useState([])
     useEffect(()=>{
         
         
@@ -59,7 +61,32 @@ function Home (){
             setData3(res)
         })
         
-    },[name,setData,setData1,setData2,setData3])
+        const getData4=async()=>{
+            return await fetch("https://newsapi.org/v2/everything?q=entertainment&language=hi&page=3&pageSize=5&apiKey=5e1a87d037a84f089b608d972b8ffe04").then((res)=>
+            res.json()).then((res)=>{
+                return res.articles
+            })
+        }
+        getData4().then((res)=>{
+            // console.log(res)
+            setData4(res)
+        })
+
+
+ const getData5=async()=>{
+            return await fetch("https://newsapi.org/v2/everything?q=Business&language=hi&page=3&pageSize=5&apiKey=5e1a87d037a84f089b608d972b8ffe04").then((res)=>
+            res.json()).then((res)=>{
+                return res.articles
+            })
+        }
+        getData5().then((res)=>{
+            // console.log(res)
+            setData5(res)
+        })
+
+
+        
+    },[name,setData,setData1,setData2,setData3,setData4,setData5])
   
 console.log(data)
 
@@ -129,6 +156,47 @@ console.log(data)
                 </div>
                 <div className="science1">
                 {data3?.map((item)=><Link to ={`/${name}/${item.title}`}>
+                <div className="single">
+                <img style={{width: "80%",height:"50%",marginBottom:"1rem",borderRadius:"1rem",alignItems:"center",marginLeft:"20px"}} src={item.urlToImage} class="card-img" alt="..."/>
+                <div className="card-body">
+                                                    <h5 className="card-title">{item.title}</h5>
+                                                    <p className="card-text">{item.description.slice(0,90)}</p>
+                                                </div>
+                                                </div>
+
+
+                </Link>)}
+               
+                </div>
+                </div>
+
+                < div className="science">
+                <div>
+                <h2>Entertainment in Hindi</h2>
+                </div>
+                <div className="science1">
+                {data4?.map((item)=><Link to ={`/${name}/${item.title}`}>
+                <div className="single">
+                <img style={{width: "80%",height:"50%",marginBottom:"1rem",borderRadius:"1rem",alignItems:"center",marginLeft:"20px"}} src={item.urlToImage} class="card-img" alt="..."/>
+                <div className="card-body">
+                                                    <h5 className="card-title">{item.title}</h5>
+                                                    <p className="card-text">{item.description.slice(0,90)}</p>
+                                                </div>
+                                                </div>
+
+
+                </Link>)}
+               
+                </div>
+</div>
+
+
+< div className="science">
+                <div>
+                <h2>Business in Hindi</h2>
+                </div>
+                <div className="science1">
+                {data5?.map((item)=><Link to ={`/${name}/${item.title}`}>
                 <div className="single">
                 <img style={{width: "80%",height:"50%",marginBottom:"1rem",borderRadius:"1rem",alignItems:"center",marginLeft:"20px"}} src={item.urlToImage} class="card-img" alt="..."/>
                 <div className="card-body">
