@@ -16,6 +16,8 @@ function Home (){
     const [data5,setData5]=useState([])
     const [data6,setData6]=useState([])
     const [data7,setData7]=useState([])
+    const [data8,setData8]=useState([])
+    const [data9,setData9]=useState([])
 
 
     useEffect(()=>{
@@ -78,7 +80,7 @@ function Home (){
 
 
  const getData5=async()=>{
-            return await fetch("https://newsapi.org/v2/everything?q=Business&language=hi&page=3&pageSize=5&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5").then((res)=>
+            return await fetch("https://newsapi.org/v2/everything?q=lifestyle&language=en&page=3&pageSize=5&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5").then((res)=>
             res.json()).then((res)=>{
                 return res.articles
             })
@@ -89,7 +91,7 @@ function Home (){
         })
 
         const getData6=async()=>{
-            return await fetch("https://newsapi.org/v2/everything?q=sharemarket&language=en&page=3&pageSize=5&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5").then((res)=>
+            return await fetch("https://newsapi.org/v2/everything?q=technology&language=hi&page=3&pageSize=5&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5").then((res)=>
             res.json()).then((res)=>{
                 return res.articles
             })
@@ -100,7 +102,7 @@ function Home (){
         })
         
         const getData7=async()=>{
-            return await fetch("https://newsapi.org/v2/everything?q=it&language=hi&page=3&pageSize=5&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5").then((res)=>
+            return await fetch("https://newsapi.org/v2/everything?q=Education&language=hi&page=3&pageSize=5&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5").then((res)=>
             res.json()).then((res)=>{
                 return res.articles
             })
@@ -110,10 +112,30 @@ function Home (){
             setData7(res)
         })
 
+        const getData8=async()=>{
+            return await fetch("https://newsapi.org/v2/everything?q=nation&language=hi&page=3&pageSize=5&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5").then((res)=>
+            res.json()).then((res)=>{
+                return res.articles
+            })
+        }
+        getData8().then((res)=>{
+            // console.log(res)
+            setData8(res)
+        })
 
+const getData9=async()=>{
+                return await fetch("https://newsapi.org/v2/everything?q=world&language=hi&page=3&pageSize=5&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5").then((res)=>
+                res.json()).then((res)=>{
+                    return res.articles
+                })
+            }
+            getData9().then((res)=>{
+                // console.log(res)
+                setData9(res)
+            })
 
         
-    },[name,setData,setData1,setData2,setData3,setData4,setData5,setData6,setData7])
+    },[name,setData,setData1,setData2,setData3,setData4,setData5,setData6,setData7,setData8,setData9])
   
 console.log(data)
 
@@ -199,7 +221,7 @@ console.log(data)
 
                 < div className="science">
                 <div>
-                <h2>Entertainment in Hindi</h2>
+                <h2><Link className="nav-link" to="/5">Entertainment in Hindi</Link></h2>
                 </div>
                 <div className="science1">
                 {data4?.map((item)=><Link to ={`/${name}/${item.title}`}>
@@ -220,7 +242,7 @@ console.log(data)
 
 < div className="science">
                 <div>
-                <h2>Business in Hindi</h2>
+                <h2> <Link className="nav-link" to="/9">Lifestyle</Link></h2>
                 </div>
                 <div className="science1">
                 {data5?.map((item)=><Link to ={`/${name}/${item.title}`}>
@@ -240,7 +262,7 @@ console.log(data)
 
 < div className="science">
                 <div>
-                <h2> Share Market </h2>
+                <h2> <Link className="nav-link" to="/8">Tech news</Link>  </h2>
                 </div>
                 <div className="science1">
                 {data6?.map((item)=><Link to ={`/${name}/${item.title}`}>
@@ -259,10 +281,49 @@ console.log(data)
 </div>
 < div className="science">
                 <div>
-                <h2> It in hindi </h2>
+                <h2><Link className="nav-link" to="/6">Education in hindi</Link>  </h2>
                 </div>
                 <div className="science1">
                 {data7?.map((item)=><Link to ={`/${name}/${item.title}`}>
+                <div className="single">
+                <img style={{width: "80%",height:"50%",marginBottom:"1rem",borderRadius:"1rem",alignItems:"center",marginLeft:"20px"}} src={item.urlToImage} class="card-img" alt="..."/>
+                <div className="card-body">
+                                                    <h5 className="card-title">{item.title}</h5>
+                                                    <p className="card-text">{item.description.slice(0,90)}</p>
+                                                </div>
+                                                </div>
+
+
+                </Link>)}
+               
+                </div>
+</div>
+< div className="science">
+                <div>
+                <h2> <Link className="nav-link" to="/3" > world news in hindi</Link>  </h2>
+                </div>
+                <div className="science1">
+                {data8?.map((item)=><Link to ={`/${name}/${item.title}`}>
+                <div className="single">
+                <img style={{width: "80%",height:"50%",marginBottom:"1rem",borderRadius:"1rem",alignItems:"center",marginLeft:"20px"}} src={item.urlToImage} class="card-img" alt="..."/>
+                <div className="card-body">
+                                                    <h5 className="card-title">{item.title}</h5>
+                                                    <p className="card-text">{item.description.slice(0,90)}</p>
+                                                </div>
+                                                </div>
+
+
+                </Link>)}
+               
+                </div>
+</div>
+
+< div className="science">
+                <div>
+                <h2><Link className="nav-link" to="/4"> National news in hindi</Link> </h2>
+                </div>
+                <div className="science1">
+                {data9?.map((item)=><Link to ={`/${name}/${item.title}`}>
                 <div className="single">
                 <img style={{width: "80%",height:"50%",marginBottom:"1rem",borderRadius:"1rem",alignItems:"center",marginLeft:"20px"}} src={item.urlToImage} class="card-img" alt="..."/>
                 <div className="card-body">
