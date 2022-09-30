@@ -1,7 +1,7 @@
 import {  useNavigate } from "react-router-dom"
 
 
-function SideMenu(){
+function UpperMenu(){
   const navigate=useNavigate()
     return(
      
@@ -15,7 +15,6 @@ function SideMenu(){
           <div className="offcanvas offcanvas-start" data-bs-scroll="true" tabIndex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
             
             <div className="offcanvas-header">
-              {/* <h5 className="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5> */}
               <img alt="error" src="https://d2u6vujtbrga6l.cloudfront.net/images/logo.png"></img>
               <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
@@ -61,7 +60,7 @@ function SideMenu(){
             </div>
           </div>
           <div className="stickyNav_Text">
-            <h6>e-Paper | Sunday Chronical</h6>
+            <h6>e-Paper | Monday Chronical</h6>
             </div>
            </div>
           
@@ -73,4 +72,4 @@ function SideMenu(){
     )
 }
 
-export default SideMenu
+export default UpperMenu ; 

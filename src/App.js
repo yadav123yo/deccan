@@ -2,13 +2,13 @@ import "./App.css";
 import Footer from "./Component/Footer";
 
 import Navbar from "./Component/Navbar";
-import SideMenu from "./Component/SideMenu";
+import UpperMenu from "./Component/UpperMenu";
 import AllRoutes from "./Routes/AllRoutes";
 
 function App() {
   return (
     <>
-      <SideMenu />
+      <UpperMenu />
       <Navbar />
       <AllRoutes />
       <Footer />

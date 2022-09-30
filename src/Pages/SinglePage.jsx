@@ -5,13 +5,12 @@ import {  useParams } from "react-router-dom"
 function SinglePage(){
     const para=useParams()
     const {singlepage}=para
-    // https://newsapi.org/v2/everything?q=${singlepage}&apiKey=17aa27bf10d34add8ee1ab6d5f101610
 const [dataz,setDataz]=useState([])
 const [data2,setData2]=useState([])
     useEffect(()=>{
 
         const getData=async()=>{
-            return await fetch(`https://newsapi.org/v2/everything?q=${singlepage}&pageSize=1&apiKey=5e1a87d037a84f089b608d972b8ffe04`).then((res)=>
+            return await fetch(`https://newsapi.org/v2/everything?q=${singlepage}&pageSize=1&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5`).then((res)=>
             res.json()).then((res)=>{
                 return res.articles
             })
@@ -22,7 +21,7 @@ const [data2,setData2]=useState([])
         })
 
         const getData2=async()=>{
-            return await fetch("https://newsapi.org/v2/top-headlines?country=us&pageSize=10&apiKey=5e1a87d037a84f089b608d972b8ffe04").then((res)=>
+            return await fetch("https://newsapi.org/v2/top-headlines?country=us&pageSize=10&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5").then((res)=>
             res.json()).then((res)=>{
                 return res.articles
             })

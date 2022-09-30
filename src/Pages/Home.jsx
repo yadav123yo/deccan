@@ -14,12 +14,16 @@ function Home (){
     const [data3,setData3]=useState([])
     const [data4,setData4]=useState([])
     const [data5,setData5]=useState([])
+    const [data6,setData6]=useState([])
+    const [data7,setData7]=useState([])
+
+
     useEffect(()=>{
         
         
         const getData=async()=>{
             
-            return await fetch(`https://newsapi.org/v2/everything?q=cricket&language=hi&page=3&pageSize=5&apiKey=5e1a87d037a84f089b608d972b8ffe04`).then((res)=>
+            return await fetch(`https://newsapi.org/v2/everything?q=cricket&language=hi&page=3&pageSize=5&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5`).then((res)=>
             res.json()).then((res)=>{
                 return res.articles
             })
@@ -29,7 +33,7 @@ function Home (){
             setData(res)
         })
         const getData1=async()=>{
-            return await fetch(`https://newsapi.org/v2/everything?q=${name}&page=3&pageSize=20&apiKey=5e1a87d037a84f089b608d972b8ffe04`).then((res)=>
+            return await fetch(`https://newsapi.org/v2/everything?q=${name}&page=3&pageSize=20&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5`).then((res)=>
             res.json()).then((res)=>{
                 return res.articles
             })
@@ -40,7 +44,7 @@ function Home (){
         })
 
         const getData2=async()=>{
-            return await fetch("https://newsapi.org/v2/top-headlines?country=in&pageSize=10&apiKey=5e1a87d037a84f089b608d972b8ffe04").then((res)=>
+            return await fetch("https://newsapi.org/v2/top-headlines?country=in&pageSize=10&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5").then((res)=>
             res.json()).then((res)=>{
                 return res.articles
             })
@@ -51,7 +55,7 @@ function Home (){
         })
         
         const getData3=async()=>{
-            return await fetch("https://newsapi.org/v2/everything?q=science&language=hi&page=3&pageSize=5&apiKey=5e1a87d037a84f089b608d972b8ffe04").then((res)=>
+            return await fetch("https://newsapi.org/v2/everything?q=science&language=hi&page=3&pageSize=5&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5").then((res)=>
             res.json()).then((res)=>{
                 return res.articles
             })
@@ -62,7 +66,7 @@ function Home (){
         })
         
         const getData4=async()=>{
-            return await fetch("https://newsapi.org/v2/everything?q=entertainment&language=hi&page=3&pageSize=5&apiKey=5e1a87d037a84f089b608d972b8ffe04").then((res)=>
+            return await fetch("https://newsapi.org/v2/everything?q=entertainment&language=hi&page=3&pageSize=5&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5").then((res)=>
             res.json()).then((res)=>{
                 return res.articles
             })
@@ -74,7 +78,7 @@ function Home (){
 
 
  const getData5=async()=>{
-            return await fetch("https://newsapi.org/v2/everything?q=Business&language=hi&page=3&pageSize=5&apiKey=5e1a87d037a84f089b608d972b8ffe04").then((res)=>
+            return await fetch("https://newsapi.org/v2/everything?q=Business&language=hi&page=3&pageSize=5&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5").then((res)=>
             res.json()).then((res)=>{
                 return res.articles
             })
@@ -84,9 +88,32 @@ function Home (){
             setData5(res)
         })
 
+        const getData6=async()=>{
+            return await fetch("https://newsapi.org/v2/everything?q=sharemarket&language=en&page=3&pageSize=5&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5").then((res)=>
+            res.json()).then((res)=>{
+                return res.articles
+            })
+        }
+        getData6().then((res)=>{
+            // console.log(res)
+            setData6(res)
+        })
+        
+        const getData7=async()=>{
+            return await fetch("https://newsapi.org/v2/everything?q=it&language=hi&page=3&pageSize=5&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5").then((res)=>
+            res.json()).then((res)=>{
+                return res.articles
+            })
+        }
+        getData7().then((res)=>{
+            // console.log(res)
+            setData7(res)
+        })
+
+
 
         
-    },[name,setData,setData1,setData2,setData3,setData4,setData5])
+    },[name,setData,setData1,setData2,setData3,setData4,setData5,setData6,setData7])
   
 console.log(data)
 
@@ -211,7 +238,44 @@ console.log(data)
                 </div>
 </div>
 
+< div className="science">
+                <div>
+                <h2> Share Market </h2>
+                </div>
+                <div className="science1">
+                {data6?.map((item)=><Link to ={`/${name}/${item.title}`}>
+                <div className="single">
+                <img style={{width: "80%",height:"50%",marginBottom:"1rem",borderRadius:"1rem",alignItems:"center",marginLeft:"20px"}} src={item.urlToImage} class="card-img" alt="..."/>
+                <div className="card-body">
+                                                    <h5 className="card-title">{item.title}</h5>
+                                                    <p className="card-text">{item.description.slice(0,90)}</p>
+                                                </div>
+                                                </div>
 
+
+                </Link>)}
+               
+                </div>
+</div>
+< div className="science">
+                <div>
+                <h2> It in hindi </h2>
+                </div>
+                <div className="science1">
+                {data7?.map((item)=><Link to ={`/${name}/${item.title}`}>
+                <div className="single">
+                <img style={{width: "80%",height:"50%",marginBottom:"1rem",borderRadius:"1rem",alignItems:"center",marginLeft:"20px"}} src={item.urlToImage} class="card-img" alt="..."/>
+                <div className="card-body">
+                                                    <h5 className="card-title">{item.title}</h5>
+                                                    <p className="card-text">{item.description.slice(0,90)}</p>
+                                                </div>
+                                                </div>
+
+
+                </Link>)}
+               
+                </div>
+</div>
 
 
 

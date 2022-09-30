@@ -14,7 +14,7 @@ function News (){
 
 
         const getData=async()=>{
-            return await fetch(`https://newsapi.org/v2/everything?q=${name}&page=4&pageSize=5&apiKey=5e1a87d037a84f089b608d972b8ffe04`).then((res)=>
+            return await fetch(`https://newsapi.org/v2/everything?q=${name}&page=4&pageSize=5&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5`).then((res)=>
             res.json()).then((res)=>{
                 return res.articles
             })
@@ -24,7 +24,7 @@ function News (){
             setData(res)
         })
         const getData1=async()=>{
-            return await fetch(`https://newsapi.org/v2/everything?q=${name}&page=3&pageSize=20&apiKey=5e1a87d037a84f089b608d972b8ffe04`).then((res)=>
+            return await fetch(`https://newsapi.org/v2/everything?q=${name}&page=3&pageSize=20&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5`).then((res)=>
             res.json()).then((res)=>{
                 return res.articles
             })
@@ -35,7 +35,7 @@ function News (){
         })
 
         const getData2=async()=>{
-            return await fetch("https://newsapi.org/v2/top-headlines?country=in&pageSize=10&apiKey=5e1a87d037a84f089b608d972b8ffe04").then((res)=>
+            return await fetch("https://newsapi.org/v2/top-headlines?country=in&pageSize=10&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5").then((res)=>
             res.json()).then((res)=>{
                 return res.articles
             })
