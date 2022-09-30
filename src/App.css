@@ -138,8 +138,7 @@ width: 80%;
 .science1{
   display: flex;
   gap: 10px;
-  overflow-x: scroll;
-  
+  overflow-x: scroll; 
 }
 
 h5,p{
@@ -177,4 +176,64 @@ h5{
 }
 .offcanvas-body ul{
 cursor: pointer;
+}
+
+/* 
+Medium Screen */
+
+@media (min-width: 840px) and (max-width: 1200px) {
+  /* *{
+    background-color: red;
+  } */
+
+.main_2{
+  display: none;
+}
+.topstorysubcontent{
+  margin-left: 40% ;
+  margin-right: 100px;
+}
+.footer{
+  width: 90%;
+margin: auto;
+gap: 5px;
+}
+.main_1{
+  margin-left: -10%;
+}
+/* .below{
+  display: none;
+} */
+/* .single{
+  width: 200px;
+  margin: auto;
+  
+}
+.science{
+  margin-left: 10%;} */
+
+}
+
+
+
+
+
+/* Small Screen */
+
+
+@media (min-width: 300px) and (max-width: 840px) {
+ /* *{
+  background-color: yellowgreen;
+ } */
+ .topstorysubcontent,.main_2{
+  display: none;
+}
+.main_1{
+  width: 90%;
+  margin: auto;
+  margin-left: 10%;
+}
+.below{
+  display: none;
+}
 }

@@ -184,7 +184,7 @@ console.log(data)
                 <div className="science1">
                 {data3?.map((item)=><Link to ={`/${name}/${item.title}`}>
                 <div className="single">
-                <img style={{width: "80%",height:"50%",marginBottom:"1rem",borderRadius:"1rem",alignItems:"center",marginLeft:"20px"}} src={item.urlToImage} class="card-img" alt="..."/>
+                <img className="img" style={{width: "80%",height:"50%",marginBottom:"1rem",borderRadius:"1rem",alignItems:"center",marginLeft:"20px"}} src={item.urlToImage} class="card-img" alt="..."/>
                 <div className="card-body">
                                                     <h5 className="card-title">{item.title}</h5>
                                                     <p className="card-text">{item.description.slice(0,90)}</p>
