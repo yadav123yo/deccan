@@ -6,6 +6,7 @@ import SinglePage from "../Pages/SinglePage";
 
 
 
+
 function AllRoutes(){ 
     return(
         
@@ -13,6 +14,7 @@ function AllRoutes(){
             <Route path="/" element={<Home/>}/>
             <Route path="/:name" element={<News/>}/>
             <Route path="/:name/:singlepage" element={<SinglePage/>}/>
+        
         </Routes>
     )
 }
