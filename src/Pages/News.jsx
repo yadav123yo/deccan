@@ -13,37 +13,37 @@ function News (){
     useEffect(()=>{
 
 
-        // const getData=async()=>{
-        //     return await fetch(`https://newsapi.org/v2/everything?q=${name}&page=4&pageSize=5&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5`).then((res)=>
-        //     res.json()).then((res)=>{
-        //         return res.articles
-        //     })
-        // }
-        // getData().then((res)=>{
-        //     // console.log(res)
-        //     setData(res)
-        // })
-        // const getData1=async()=>{
-        //     return await fetch(`https://newsapi.org/v2/everything?q=${name}&page=3&pageSize=20&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5`).then((res)=>
-        //     res.json()).then((res)=>{
-        //         return res.articles
-        //     })
-        // }
-        // getData1().then((res)=>{
-        //     // console.log(res)
-        //     setData1(res)
-        // })
+        const getData=async()=>{
+            return await fetch(`https://newsapi.org/v2/everything?q=${name}&page=4&pageSize=5&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5`).then((res)=>
+            res.json()).then((res)=>{
+                return res.articles
+            })
+        }
+        getData().then((res)=>{
+            // console.log(res)
+            setData(res)
+        })
+        const getData1=async()=>{
+            return await fetch(`https://newsapi.org/v2/everything?q=${name}&page=3&pageSize=20&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5`).then((res)=>
+            res.json()).then((res)=>{
+                return res.articles
+            })
+        }
+        getData1().then((res)=>{
+            // console.log(res)
+            setData1(res)
+        })
 
-        // const getData2=async()=>{
-        //     return await fetch("https://newsapi.org/v2/top-headlines?country=in&pageSize=10&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5").then((res)=>
-        //     res.json()).then((res)=>{
-        //         return res.articles
-        //     })
-        // }
-        // getData2().then((res)=>{
-        //     // console.log(res)
-        //     setData2(res)
-        // })
+        const getData2=async()=>{
+            return await fetch("https://newsapi.org/v2/top-headlines?country=in&pageSize=10&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5").then((res)=>
+            res.json()).then((res)=>{
+                return res.articles
+            })
+        }
+        getData2().then((res)=>{
+            // console.log(res)
+            setData2(res)
+        })
         
     },[name,setData,setData1,setData2])
   
