@@ -10,7 +10,7 @@ const [data2,setData2]=useState([])
     useEffect(()=>{
 
         const getData=async()=>{
-            return await fetch(`https://newsapi.org/v2/everything?q=${singlepage}&pageSize=1&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5`).then((res)=>
+            return await fetch(`https://newsapi.org/v2/everything?q=${singlepage}&pageSize=1&apiKey=e20544b4297e455698c19dd4cf9facac`).then((res)=>
             res.json()).then((res)=>{
                 return res.articles
             })
@@ -21,7 +21,7 @@ const [data2,setData2]=useState([])
         })
 
         const getData2=async()=>{
-            return await fetch("https://newsapi.org/v2/top-headlines?country=us&pageSize=10&apiKey=e2e48ecaaf4a439d88f4fdcd80c6f3d5").then((res)=>
+            return await fetch("https://newsapi.org/v2/top-headlines?country=us&pageSize=10&apiKey=e20544b4297e455698c19dd4cf9facac").then((res)=>
             res.json()).then((res)=>{
                 return res.articles
             })
